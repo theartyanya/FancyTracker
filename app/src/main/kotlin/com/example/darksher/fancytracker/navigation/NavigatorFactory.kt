@@ -26,7 +26,7 @@ object NavigatorFactory {
              * Called when we try to back from the root.
              */
             override fun exit() {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                activity.finish()
             }
 
             /**
