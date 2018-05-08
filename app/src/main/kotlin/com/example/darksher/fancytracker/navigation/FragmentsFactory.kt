@@ -2,7 +2,7 @@ package com.example.darksher.fancytracker.navigation
 
 import android.support.v4.app.Fragment
 import com.example.darksher.fancytracker.Screens
-import com.example.darksher.fancytracker.presentation.home.HomeFragment
+import com.example.darksher.fancytracker.ui.HomeFragment
 
 object FragmentsFactory {
 
