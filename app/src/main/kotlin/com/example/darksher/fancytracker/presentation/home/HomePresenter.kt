@@ -1,6 +1,7 @@
 package com.example.darksher.fancytracker.presentation.home
 
 import com.arellomobile.mvp.InjectViewState
+import com.example.darksher.fancytracker.Screens
 import com.example.darksher.fancytracker.domain.*
 import com.example.darksher.fancytracker.presentation.common.base.BasePresenter
 import ru.terrakok.cicerone.Router
@@ -15,6 +16,10 @@ class HomePresenter(private val router: Router?) : BasePresenter<HomeContract.Vi
 
     override fun onBackPressed() {
         router?.exit()
+    }
+
+    override fun openNoteDetails() {
+        router?.navigateTo(Screens.NOTE_DETAILS_SCREEN)
     }
 
     private fun generateMockList(): List<NotesListItem> {

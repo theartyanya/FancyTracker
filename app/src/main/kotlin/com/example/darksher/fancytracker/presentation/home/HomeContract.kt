@@ -9,5 +9,7 @@ interface HomeContract {
         fun showNotesList(notes: List<NotesListItem>)
     }
 
-    interface Presenter : BaseContract.Presenter
+    interface Presenter : BaseContract.Presenter {
+        fun openNoteDetails()
+    }
 }

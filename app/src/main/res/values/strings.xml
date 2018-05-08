@@ -2,5 +2,8 @@
     <string name="app_name">FancyTracker</string>
 
     <string name="error_generic">An error occurred</string>
-    <string name="show_more">Show more...</string>
+    <string name="show_more">Show more…</string>
+    <string name="title">Title:</string>
+    <string name="date">Date:</string>
+    <string name="description">Description:</string>
 </resources>
