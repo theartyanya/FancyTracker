@@ -22,6 +22,10 @@ class HomePresenter(private val router: Router?) : BasePresenter<HomeContract.Vi
         router?.navigateTo(Screens.NOTE_DETAILS_SCREEN)
     }
 
+    override fun openCreateNote() {
+        router?.navigateTo(Screens.NOTE_CREATE_SCREEN)
+    }
+
     private fun generateMockList(): List<NotesListItem> {
         return listOf(
                 HeaderItemNotes("Sun, 26"),

@@ -4,4 +4,5 @@ object Screens {
 
     const val HOME_SCREEN = "HOME SCREEN"
     const val NOTE_DETAILS_SCREEN = "note details screen"
+    const val NOTE_CREATE_SCREEN = "note create screen"
 }

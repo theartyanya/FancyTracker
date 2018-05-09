@@ -10,28 +10,28 @@ import com.example.darksher.fancytracker.R
 import com.example.darksher.fancytracker.navigation.RouterProvider
 import com.example.darksher.fancytracker.presentation.common.base.BaseFragment
 import com.example.darksher.fancytracker.presentation.common.error.ErrorMessage
-import com.example.darksher.fancytracker.presentation.notedetails.NoteDetailsContract
-import com.example.darksher.fancytracker.presentation.notedetails.NoteDetailsPresenter
+import com.example.darksher.fancytracker.presentation.createnote.CreateNoteContract
+import com.example.darksher.fancytracker.presentation.createnote.CreateNotePresenter
 
-class NoteDetailsFragment : BaseFragment<NoteDetailsContract.Presenter>(), NoteDetailsContract.View {
+class CreateNoteFragment : BaseFragment<CreateNoteContract.Presenter>(), CreateNoteContract.View {
 
-    @InjectPresenter lateinit var presenter: NoteDetailsPresenter
+    @InjectPresenter lateinit var presenter: CreateNotePresenter
 
     companion object {
-        fun newInstance() = NoteDetailsFragment()
+        fun newInstance() = CreateNoteFragment()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-            inflater.inflate(R.layout.fragment_note, container, false)
+            inflater.inflate(R.layout.fragment_create, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
 
     @ProvidePresenter
-    override fun providePresenter() = NoteDetailsPresenter((parentFragment as? RouterProvider)?.getRouter())
+    override fun providePresenter() = CreateNotePresenter((parentFragment as? RouterProvider)?.getRouter())
 
-    override fun getPresenter(): NoteDetailsContract.Presenter = presenter
+    override fun getPresenter(): CreateNoteContract.Presenter = presenter
 
     override fun onError(error: ErrorMessage) {
         super.handleError(error)

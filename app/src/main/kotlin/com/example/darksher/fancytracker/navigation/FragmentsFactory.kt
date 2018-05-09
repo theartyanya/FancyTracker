@@ -2,6 +2,7 @@ package com.example.darksher.fancytracker.navigation
 
 import android.support.v4.app.Fragment
 import com.example.darksher.fancytracker.Screens
+import com.example.darksher.fancytracker.ui.CreateNoteFragment
 import com.example.darksher.fancytracker.ui.HomeFragment
 import com.example.darksher.fancytracker.ui.NoteDetailsFragment
 
@@ -11,6 +12,7 @@ object FragmentsFactory {
         return when(screenKey) {
             Screens.HOME_SCREEN -> HomeFragment.newInstance()
             Screens.NOTE_DETAILS_SCREEN -> NoteDetailsFragment.newInstance()
+            Screens.NOTE_CREATE_SCREEN -> CreateNoteFragment.newInstance()
             else -> null
         }
     }

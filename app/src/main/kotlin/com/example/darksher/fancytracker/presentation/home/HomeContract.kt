@@ -11,5 +11,6 @@ interface HomeContract {
 
     interface Presenter : BaseContract.Presenter {
         fun openNoteDetails()
+        fun openCreateNote()
     }
 }

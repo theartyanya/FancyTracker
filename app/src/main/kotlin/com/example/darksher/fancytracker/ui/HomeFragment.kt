@@ -49,6 +49,8 @@ class HomeFragment : BaseFragment<HomeContract.Presenter>(), HomeContract.View {
         rv_notes?.setHasFixedSize(true)
         rv_notes?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         rv_notes?.layoutManager = LinearLayoutManager(context)
+
+        fab.setOnClickListener { presenter.openCreateNote() }
     }
 
     override fun showNotesList(notes: List<NotesListItem>) {
