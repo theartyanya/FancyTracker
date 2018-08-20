@@ -16,7 +16,7 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity<MainContract.Presenter>(), RouterProvider, MainContract.View {
 
-    @Inject lateinit var cicerone: Cicerone<Router>
+    @Inject lateinit var cicerone: Cicerone<Router >
     @Inject lateinit var localRouter: Router
     @InjectPresenter lateinit var presenter: MainPresenter
 

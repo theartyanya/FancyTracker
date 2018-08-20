@@ -2,9 +2,7 @@ package com.example.darksher.fancytracker.navigation
 
 import android.support.v4.app.Fragment
 import com.example.darksher.fancytracker.Screens
-import com.example.darksher.fancytracker.ui.CreateNoteFragment
-import com.example.darksher.fancytracker.ui.HomeFragment
-import com.example.darksher.fancytracker.ui.NoteDetailsFragment
+import com.example.darksher.fancytracker.ui.*
 
 object FragmentsFactory {
 
@@ -13,6 +11,7 @@ object FragmentsFactory {
             Screens.HOME_SCREEN -> HomeFragment.newInstance()
             Screens.NOTE_DETAILS_SCREEN -> NoteDetailsFragment.newInstance()
             Screens.NOTE_CREATE_SCREEN -> CreateNoteFragment.newInstance()
+            Screens.NOTE_DAY_LIST_SCREEN -> DayNotesListFragment.newInstance()
             else -> null
         }
     }

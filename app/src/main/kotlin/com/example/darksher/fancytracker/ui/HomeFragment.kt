@@ -45,6 +45,7 @@ class HomeFragment : BaseFragment<HomeContract.Presenter>(), HomeContract.View {
     private fun setupViews() {
         _adapter = NotesListAdapter()
         _adapter?.setCallback { presenter.openNoteDetails() }
+        _adapter?.setMoreCallback { presenter.openMoreScreen() }
         rv_notes?.adapter = _adapter
         rv_notes?.setHasFixedSize(true)
         rv_notes?.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))

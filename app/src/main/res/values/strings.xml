@@ -7,4 +7,8 @@
     <string name="date">Date:</string>
     <string name="description">Description:</string>
     <string name="important">Important</string>
+    <string name="done">Done</string>
+    <string name="add_note">Add note</string>
+    <string name="tasks">Tasks</string>
+    <string name="note_details">Note details</string>
 </resources>

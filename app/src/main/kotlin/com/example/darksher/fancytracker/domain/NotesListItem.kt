@@ -1,6 +1,6 @@
 package com.example.darksher.fancytracker.domain
 
-abstract class NotesListItem(
+open class NotesListItem(
         val type: Type
 ) {
     enum class Type {
