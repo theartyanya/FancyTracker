@@ -8,7 +8,9 @@
     <string name="description">Description:</string>
     <string name="important">Important</string>
     <string name="done">Done</string>
-    <string name="add_note">Add note</string>
+    <string name="add_note">Add Note</string>
     <string name="tasks">Tasks</string>
     <string name="note_details">Note details</string>
+    <string name="task">Task</string>
+    <string name="back">Back</string>
 </resources>

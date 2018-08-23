@@ -9,122 +9,162 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/nsv_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside">
 
-        <TextView
+        <ImageView
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0.0"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/sans_bold"
+            android:fontFamily="@font/rubik_medium"
             android:text="@string/add_note"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/horizontal_padding" />
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_chainStyle="spread_inside">
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/horizontal_padding" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/vertical_padding" />
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/date"
-        app:layout_constraintBottom_toTopOf="@+id/til_title"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toEndOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_chainStyle="packed">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/et_date"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/drawable_padding"
-            android:drawableStart="@drawable/ic_calendar" />
+            android:layout_height="match_parent">
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingTop="16dp">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/title"
-        app:layout_constraintBottom_toTopOf="@+id/til_description"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/til_date">
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/et_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_label_outline"
-            android:drawablePadding="@dimen/drawable_padding"/>
+                    <android.support.constraint.Guideline
+                        android:id="@+id/guideline_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/horizontal_padding" />
 
-    </android.support.design.widget.TextInputLayout>
+                    <android.support.constraint.Guideline
+                        android:id="@+id/guideline_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/horizontal_padding" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/description"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/til_title"
-        app:layout_constraintBottom_toTopOf="@id/cv_important">
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/til_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:hint="@string/date"
+                        app:layout_constraintBottom_toTopOf="@+id/et_title"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/et_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/drawable_padding"
-            android:drawableStart="@drawable/ic_edit" />
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/et_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/drawable_padding"
+                            android:drawableStart="@drawable/ic_calendar"
+                            android:enabled="false" />
 
-    </android.support.design.widget.TextInputLayout>
+                    </android.support.design.widget.TextInputLayout>
 
-    <CheckBox
-        android:id="@+id/cv_important"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/important"
-        android:textSize="18sp"
-        android:paddingStart="4dp"
+                    <EditText
+                        android:id="@+id/et_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/drawable_padding"
+                        android:drawableStart="@drawable/ic_label_outline"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:hint="@string/title"
+                        app:layout_constraintBottom_toTopOf="@id/rv_subtasks"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                        app:layout_constraintTop_toBottomOf="@+id/til_date" />
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_subtasks"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                        app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                        app:layout_constraintTop_toBottomOf="@id/et_title" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/btn_add_note"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorAccent"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/rubik_medium"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/add_note"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/til_description" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nsv_content" />
 
 </android.support.constraint.ConstraintLayout>

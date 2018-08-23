@@ -17,7 +17,7 @@
         android:textSize="16sp"
         android:textColor="@android:color/white"
         tools:text="Mon, 26"
-        android:fontFamily="@font/sans_bold"
+        android:fontFamily="@font/rubik_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
