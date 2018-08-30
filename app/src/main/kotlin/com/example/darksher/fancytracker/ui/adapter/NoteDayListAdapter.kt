@@ -42,8 +42,8 @@ class NoteDayListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 val strikeSpan = StrikethroughSpan()
                 val span = SpannableString(data.note.title)
                 holder.tvTitle?.text = data.note.title
-                holder.tvDescription?.text = data.note.description
-                holder.itemView.setOnClickListener { _callback.invoke(data.note.title) }
+                holder.tvDescription?.text = data.note.tasks.first()?.text
+                holder.itemView.setOnClickListener { _callback.invoke(data.note.title ?: "") }
                 /*if (data.note.isDone) {
                     holder.checkBox?.isChecked = true
                     val span = SpannableString(holder.tvTitle?.text)

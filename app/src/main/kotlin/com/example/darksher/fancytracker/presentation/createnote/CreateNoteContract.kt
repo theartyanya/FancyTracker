@@ -6,5 +6,7 @@ interface CreateNoteContract {
 
     interface View : BaseContract.View
 
-    interface Presenter : BaseContract.Presenter
+    interface Presenter : BaseContract.Presenter {
+        suspend fun createNote(date: Long, title: String?, tasks: List<String>)
+    }
 }

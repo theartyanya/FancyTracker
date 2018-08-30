@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.darksher.fancytracker.di.AppComponent
 import com.example.darksher.fancytracker.di.AppModule
 import com.example.darksher.fancytracker.di.DaggerAppComponent
+import io.realm.Realm
 import timber.log.Timber
 
 class App : Application() {
@@ -15,7 +16,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         initializeInjector()
-
+        Realm.init(this)
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }

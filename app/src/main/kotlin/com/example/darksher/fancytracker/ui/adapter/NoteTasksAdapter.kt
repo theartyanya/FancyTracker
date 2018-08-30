@@ -75,6 +75,8 @@ class NoteTasksAdapter : RecyclerView.Adapter<NoteTasksAdapter.TaskHolder>() {
 
     }
 
+    fun getTasks(): List<String> = _tasks
+
     class TaskHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val field: EditText = itemView.et_task
     }

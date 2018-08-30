@@ -10,6 +10,12 @@ apply from: './dependencies.gradle'
 
 apply plugin: 'realm-android'
 
+kotlin {
+    experimental {
+        coroutines 'enable'
+    }
+}
+
 android {
     compileSdkVersion 27
     defaultConfig {

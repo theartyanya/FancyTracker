@@ -5,6 +5,7 @@ import com.example.darksher.fancytracker.Screens
 import com.example.darksher.fancytracker.domain.*
 import com.example.darksher.fancytracker.presentation.common.base.BasePresenter
 import ru.terrakok.cicerone.Router
+import java.util.*
 
 @InjectViewState
 class NoteDayListPresenter(private val router: Router?) :
@@ -38,19 +39,21 @@ class NoteDayListPresenter(private val router: Router?) :
 
     private fun generateMockList(): List<NotesListItem> {
         return listOf(
-                NoteItemNotes(Note("Sun, 26", "Task 1", "Fancy description")),
-                NoteItemNotes(Note("Sun, 26", "Task 2", "Fancy description")),
-                NoteItemNotes(Note("Sun, 26", "Task 3", "Fancy description")),
-                NoteItemNotes(Note("Sun, 26", "Task 4", "Fancy description")),
-                NoteItemNotes(Note("Mon, 27", "Task 1", "Fancy description")),
-                NoteItemNotes(Note("Mon, 27", "Task 2", "Fancy description")),
-                NoteItemNotes(Note("Mon, 27", "Task 3", "Fancy description")),
-                NoteItemNotes(Note("Mon, 27", "Task 4", "Fancy description")),
-                NoteItemNotes(Note("Tue, 28", "Task 1", "Fancy description")),
-                NoteItemNotes(Note("Tue, 28", "Task 2", "Fancy description")),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
                 NotesListItem(NotesListItem.Type.FOOTER),
-                NoteItemNotes(Note("Tue, 28", "Task 3", "Fancy description", true)),
-                NoteItemNotes(Note("Tue, 28", "Task 4", "Fancy description", true))
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false)),
+                NoteItemNotes(Note(Calendar.getInstance().timeInMillis, "Mon, 27", listOf(Task("Hello", false)), false))
 
         )
     }

@@ -44,8 +44,8 @@ class NotesListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             is NoteHolder -> {
                 val data = _notes[position] as NoteItemNotes
                 holder.tvTitle?.text = data.note.title
-                holder.tvDescription?.text = data.note.description
-                holder.itemView.setOnClickListener { _callback.invoke(data.note.title) }
+                holder.tvDescription?.text = data.note.tasks.first()?.text
+                holder.itemView.setOnClickListener { _callback.invoke(data.note.title ?: "") }
             }
             is FooterHolder -> {
                 val data = _notes[position] as FooterItemNotes
